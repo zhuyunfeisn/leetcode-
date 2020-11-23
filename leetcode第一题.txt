@@ -1,0 +1,22 @@
+leetcode第一题
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+         int[] ar = {0, 0};
+        for (int i = 0; i < nums.length; ++i) {
+            for (int j = 0; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    if (i == j) {
+                        System.out.println("error");
+                    } else {
+                        ar[0] = j;
+                        ar[1] = i;
+                    }
+                }
+            }
+        }
+        System.out.println(Arrays.toString(ar));
+return ar;
+
+    }
+}
+

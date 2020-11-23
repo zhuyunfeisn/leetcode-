@@ -1,0 +1,17 @@
+leetcode第九题
+class Solution {
+    public boolean isPalindrome(int x) {
+   char ar[] = String.valueOf(x).toCharArray();//整形转字符数组
+        int n = ar.length;
+        if (n == 1)
+            return true;
+        for (int i = 0; i < n; i++) {
+            if (ar[i] != ar[n - i-1]){
+                return false;
+               }
+
+        }
+        return true;
+    }
+}
+
