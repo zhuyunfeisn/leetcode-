@@ -1,0 +1,30 @@
+leetcode 第七题
+public class Main {
+    public static void main(String[] args) {
+int result=reverse(-123);
+        System.out.println(result);
+    }
+    public static int reverse(int x) {
+char ar[]=String.valueOf(x).toCharArray();
+int n=ar.length;
+char ch;
+for(int i=0;i<n/2;++i){
+    if(ar[0]=='-'){
+        ch=ar[i+1];
+        ar[i+1]=ar[n-i-1];
+        ar[n-1-i]=ch;
+    }
+    else{
+        ch=ar[i];
+        ar[i]=ar[n-i-1];
+        ar[n-i-1]=ch;
+    }
+}
+String S=new String(ar);
+long result=Long.valueOf(S);
+        if(result>Integer.MAX_VALUE||result<Integer.MIN_VALUE){
+            return 0;
+        }//判断是否溢出
+return (int)(result);
+    }
+}
