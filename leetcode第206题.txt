@@ -1,0 +1,13 @@
+class Solution {
+        public ListNode reverseList(ListNode head) {
+            ListNode curr=head;//curr代表当前需要删除的节点
+           ListNode prev=null;//prev代表需要删除节点的前驱
+           ListNode temp=null;//temp为临时值，用于保存cur的后驱
+            while(curr!=null){
+                temp=curr.next;
+                curr.next=prev;
+                prev=curr;
+                curr=temp;
+            }
+            return prev;
+        }
