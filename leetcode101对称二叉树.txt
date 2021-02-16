@@ -1,0 +1,16 @@
+class Solution {
+     public boolean isSymmetric(TreeNode root) {
+   return issymmetric(root, root);
+    }
+
+    public boolean issymmetric(TreeNode p,TreeNode q){
+        if(p==null&&q==null){
+            return true;
+        }else if(p==null||q==null){
+            return false;
+        }else {
+            return q.val==p.val&&issymmetric(p.left,q.right)&&issymmetric(p.right,q.left);
+        }
+
+    }
+}
